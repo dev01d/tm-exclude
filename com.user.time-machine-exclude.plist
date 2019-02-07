@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.user.time-machine-exclude</string>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>KeepAlive</key>
+	<false/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>-c</string>
+		<string>cd &quot;$HOME/Sites&quot; &amp;&amp; find $(pwd) -type d -name node_modules -prune -exec tmutil removeexclusion item {} \; &amp;&amp; find $(pwd) -type d -name node_modules -prune -exec tmutil addexclusion {} \;</string>
+	</array>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>13</integer>
+		<key>Minute</key>
+		<integer>05</integer>
+	</dict>
+</dict>
+</plist>
