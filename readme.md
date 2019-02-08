@@ -1,16 +1,20 @@
-# Time Machine exclude
+# Time Machine exclude [![version badge](https://img.shields.io/github/release/dev01d/tm-exclude.svg?style=flat)](https://github.com/dev01d/tm-exclude/releases)
 
 This is a `launchd` plist wrapper that uses `find` and `tmutil` to recursively search for and exclude specified directories from your Time Machine backups.
 
 > This example is for the node_modules directory but will work on any other reoccurring dev dependency.
 
-**Usage**:
+This plist watches each directory specified for state change, runs and then sleeps for 30 seconds so the system doesn't throttle it.
+
+## Usage
 
 - Open with Xcode or any text editor
 
 - Edit the command so `cd` points to your working directory
 
-- Change hour and minute values to a time you are usually actively using your computer.
+- Edit the string under `<key>WatchPaths</key>` and be sure to include trailing slash
+
+  > Multiple `<string>~/directory/to/monitor/</string>` entries supported
 
 - Move plist to `~/Library/LaunchAgents/`
 
@@ -20,11 +24,15 @@ This is a `launchd` plist wrapper that uses `find` and `tmutil` to recursively s
 launchctl load ~/Library/LaunchAgents/com.user.time-machine-exclude.plist
 ```
 
-- Wait for interval
+- Done.
 
-> After interval to see if the plist was effective run this command.
+Whenever the directory's state changes the script with run removing old exclusions then adding new ones
+
+> To see if the plist was effective run this command.
 >
 > ```bash
 > cd "$HOME/your-working-dir"; \
 > find $(pwd) -type d -name node_modules -prune -exec tmutil isexcluded item {} \;
 > ```
+
+**Note:** I haven't noticed any absurd resource usage but for those concerned please see [v1.0.0](https://github.com/dev01d/tm-exclude/releases/tag/1.0.0).
