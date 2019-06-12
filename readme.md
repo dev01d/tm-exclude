@@ -26,7 +26,7 @@ launchctl load ~/Library/LaunchAgents/com.user.time-machine-exclude.plist
 
 - Done.
 
-Whenever the directory's state changes the script with run removing old exclusions then adding new ones
+Whenever the directory's state changes the script will run removing old exclusions then adding new ones
 
 > To see if the plist was effective run this command.
 >
