@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Label</key>
-	<string>com.user.time-machine-exclude</string>
-	<key>RunAtLoad</key>
-	<true/>
-	<key>KeepAlive</key>
-	<false/>
-	<key>ProgramArguments</key>
-	<array>
-		<string>/bin/bash</string>
-		<string>-c</string>
-		<string>cd &quot;$HOME/Sites&quot; &amp;&amp; find $(pwd) -type d -name node_modules -prune -exec tmutil removeexclusion item {} \; &amp;&amp; find $(pwd) -type d -name node_modules -prune -exec tmutil addexclusion {} \; &amp;&amp; sleep 30</string>
-	</array>
-	<key>WatchPaths</key>
-    <array>
-      <string>~/directory/to/monitor/</string>
-    </array>
-</dict>
+	<dict>
+		<key>Label</key>
+		<string>com.user.time-machine-exclude</string>
+		<key>RunAtLoad</key>
+		<true/>
+		<key>KeepAlive</key>
+		<false/>
+		<key>ProgramArguments</key>
+		<array>
+			<string>/bin/bash</string>
+			<string>-c</string>
+			<string>cd &quot;$HOME/Sites&quot; &amp;&amp; find $(pwd) -type d -name node_modules -prune -exec tmutil removeexclusion {} \; &amp;&amp; find $(pwd) -type d -name node_modules -prune -exec tmutil addexclusion {} \; &amp;&amp; sleep 30</string>
+		</array>
+		<key>WatchPaths</key>
+		<array>
+			<string>~/directory/to/monitor/</string>
+		</array>
+	</dict>
 </plist>

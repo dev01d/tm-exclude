@@ -32,7 +32,7 @@ Whenever the directory's state changes the script will run removing old exclusio
 >
 > ```bash
 > cd "$HOME/your-working-dir"; \
-> find $(pwd) -type d -name node_modules -prune -exec tmutil isexcluded item {} \;
+> find $(pwd) -type d -name node_modules -prune -exec tmutil isexcluded {} \;
 > ```
 
 **Note:** I haven't noticed any absurd resource usage but for those concerned please see [v1.0.0](https://github.com/dev01d/tm-exclude/releases/tag/1.0.0).
