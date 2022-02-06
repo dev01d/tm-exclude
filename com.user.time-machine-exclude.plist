@@ -20,7 +20,7 @@
 		</array>
 		<key>WatchPaths</key>
 		<array>
-	    <!-- Directories to watch for changes -->
+			<!--? Directories to watch for changes -->
 			<string>~/directory/to/monitor/</string>
 			<string>~/another/directory/to/monitor/</string>
 		</array>
