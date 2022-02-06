@@ -48,11 +48,11 @@ Then dirs to watch (WatchPaths) would be:
 
 ## Test
 
-> To see if the plist was effective run this command.
->
-> ```bash
-> WORKINGDIR=$HOME/your-working-dir \
-> && find $WORKINGDIR -type d -name node_modules -prune -exec tmutil isexcluded {} +
-> ```
+To see if the plist was effective run this command.
+
+```bash
+WORKINGDIR=$HOME/your-working-dir \
+&& find $WORKINGDIR -type d -name node_modules -prune -exec tmutil isexcluded {} +
+```
 
 **Note:** I haven't noticed any absurd resource usage but for those concerned please see [v1.0.0](https://github.com/dev01d/tm-exclude/releases/tag/1.0.0).
