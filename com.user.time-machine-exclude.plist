@@ -10,13 +10,19 @@
 		<false/>
 		<key>ProgramArguments</key>
 		<array>
-			<string>/bin/bash</string>
+			<string>/bin/zsh</string>
 			<string>-c</string>
-			<string>cd &quot;$HOME/Sites&quot; &amp;&amp; find $(pwd) -type d -name node_modules -prune -exec tmutil removeexclusion {} + &amp;&amp; find $(pwd) -type d -name node_modules -prune -exec tmutil addexclusion {} + &amp;&amp; sleep 30</string>
+			<!--? Variable for project parent dir -->
+			<string>WORKINGDIR=$HOME/your-working-dir</string>
+			<string>find &quot;$WORKINGDIR&quot; -type d -name node_modules -prune -exec tmutil removeexclusion {} + &amp;&amp;</string>
+			<string>find &quot;$WORKINGDIR&quot; -type d -name node_modules -prune -exec tmutil addexclusion {} + &amp;&amp;</string>
+			<string>sleep 1</string>
 		</array>
 		<key>WatchPaths</key>
 		<array>
+	    <!-- Directories to watch for changes -->
 			<string>~/directory/to/monitor/</string>
+			<string>~/another/directory/to/monitor/</string>
 		</array>
 	</dict>
 </plist>
